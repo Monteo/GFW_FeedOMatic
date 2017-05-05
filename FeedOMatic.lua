@@ -623,6 +623,7 @@ function FOM_ChatCommandHandler(msg)
 		GFWUtils.Print("- "..GFWUtils.Hilite("help").." - Print this helplist.");
 		GFWUtils.Print("- "..GFWUtils.Hilite("status").." - Check current settings.");
 		GFWUtils.Print("- "..GFWUtils.Hilite("reset").." - Reset to default settings.");
+		GFWUtils.Print("- "..GFWUtils.Hilite("clear").." - Clearing saved variables about food. It Does NOT reset your settings."); --Monteo
 		GFWUtils.Print("- "..GFWUtils.Hilite("alert chat").." | "..GFWUtils.Hilite("emote").." | "..GFWUtils.Hilite("off").." - Alert via chat window or emote channel when feeding.");
 		GFWUtils.Print("- "..GFWUtils.Hilite("level content").." | "..GFWUtils.Hilite("happy").." | "..GFWUtils.Hilite("off").." - Provide an extra reminder to feed your pet when happiness is below this level.");
 		GFWUtils.Print("- "..GFWUtils.Hilite("saveforcook orange").." | "..GFWUtils.Hilite("yellow").." | "..GFWUtils.Hilite("green").." | "..GFWUtils.Hilite("gray").." | "..GFWUtils.Hilite("off").." - Avoid foods used in cooking recipes (based on their difficulty).");
@@ -727,6 +728,14 @@ function FOM_ChatCommandHandler(msg)
 		FOM_QuestFood = nil;
 		GFWUtils.Print("Feed-O-Matic configuration reset.");
 		FOM_ChatCommandHandler("status");
+		return;
+	end
+	
+		-- Cleaning of the data used by the food --Monteo
+	if ( msg == "clear" ) then
+		FOM_Cooking = nil;
+		FOM_FoodQuality = nil;
+		GFWUtils.Print("Feed-O-Matic data on food are cleared.");
 		return;
 	end
 	
