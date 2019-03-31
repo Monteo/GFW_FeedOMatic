@@ -33,11 +33,22 @@ where <command> can be any of the following:
 	`help` - Print this helplist.
 	`status` - Check current settings.
 	`reset` - Reset to default settings.
+	`clear` - Clearing saved variables about food. It Does NOT reset your settings.
+	`alert chat` - Alert via chat window or emote channel when feeding.
+	`level content` - Provide an extra reminder to feed your pet when happiness is below this level.
+	`saveforcook orange` - Avoid foods used in cooking recipes (based on their difficulty).
+	`savequest on` - Avoid foods you need to collect for a quest.
+	`savebonus on` - Avoid foods which have bonus effects.
+	`fallback on` - Fall back to foods we'd normally avoid if no other food is available.
+	`keepopen <number>` - Set when to prefer smaller stacks of food versus evaluating food based on quality. 
+	`quality high` - Set whether to prefer foods that give your pet more happiness faster or less happiness more slowly.
+	`tooltip on` - Identifies and rates pet foods in their tooltips.
 	`feed` - Feed your pet (automatically finds an appropriate food).
 	`feed <item link>` - Feed your pet a specific food.
 	`add <diet> <item link>` - Add food to the list for a specific diet (meat, fish, fruit, etc).
-	`remove <diet> <item link>` - Remove food from the list.
+	`remove <diet> <name>` - Remove food from list.
 	`show <diet>` - Show food list for a specific diet (or for `all`).
+
 
 CAVEATS, ETC.: 
 	- Feed-O-Matic has a database of many known foods, but it's not guaranteed to be comprehensive. You can use the `add`, `remove`, and `show` commands noted above to manage these lists directly. (Please drop me a line if you find a food that should be on there, or discover that something on the list shouldn't be there.) 
